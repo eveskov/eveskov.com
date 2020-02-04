@@ -1,0 +1,182 @@
+html,
+body {
+  height     : 100%;
+  min-height : 100vh;
+}
+
+body {
+  padding                  : 0;
+  margin                   : 0;
+  background               : #fff;
+  //font-family              : 'Roboto', sans-serif;
+  font-family              : 'PT Serif', serif;
+  font-size                : 13px;
+  line-height              : 1.6;
+  color                    : #2E2D33;
+  -webkit-font-smoothing   : antialiased;
+  -webkit-text-size-adjust : 100%;
+}
+
+div {
+  box-sizing : border-box;
+}
+
+.wrap {
+  width           : 100%;
+  min-height      : 100%;
+  display         : flex;
+  justify-content : center;
+  > * {
+    width : 100%;
+  }
+}
+
+.left {
+  background      : #2e2c39;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  align-items     : flex-end;
+  padding         : 50px;
+  > * {
+    margin : 0 0 35px 0;
+  }
+  > *:last-child {
+    margin-bottom : 0;
+  }
+}
+
+.left-inner {
+  display : block;
+  width   : 100%;
+}
+
+.right {
+  background      : url("../img/evgeni-veskov-890x650.jpg") center center no-repeat;
+  background-size : cover;
+}
+
+.evg-name,
+.job-position,
+.skills-wrap,
+.social-logos {
+  margin-top    : 0;
+  margin-bottom : 30px;
+}
+
+.evg-name {
+  font-weight    : 900;
+  font-size      : 9vh;
+  color          : #fff;
+  line-height    : 1.2;
+  letter-spacing : 6px;
+}
+
+.job-position {
+  font-weight : 100;
+  font-size   : 26px;
+  color       : #ddd;
+}
+
+.skills {
+  font-weight : 400;
+  font-size   : 14px;
+  color       : #999;
+  text-align  : left;
+  margin      : 5px 0;
+  span {
+    &:after {
+      content       : '';
+      background    : #999;
+      border-radius : 50%;
+      width         : 3px;
+      height        : 3px;
+      margin        : 3px 9px;
+      display       : inline-block;
+    }
+    &:last-of-type:after {
+      display : none;
+    }
+  }
+}
+
+.social-logos {
+  display     : flex;
+  align-items : center;
+  height      : 60px;
+  width       : 100%;
+  img {
+    height     : 50px;
+    opacity    : .5;
+    transition : all 0.5s ease-out;
+    &:hover {
+      opacity : 1;
+    }
+  }
+  a {
+    margin-right : 15px;
+    &:last-of-type {
+      margin-right : 0;
+    }
+  }
+}
+
+.evg-footer {
+  a {
+    color           : #999;
+    display         : block;
+    width           : 100%;
+    font-weight     : 400;
+    text-decoration : none;
+    transition      : all .5s ease-out;
+    &:hover {
+      color : #fff;
+    }
+  }
+}
+
+/*Mobile*/
+@media (max-width : 767px) {
+  .wrap {
+    min-height      : 100vh;
+    flex-direction  : column;
+    justify-content : flex-start;
+  }
+
+  .right {
+    order               : -1;
+    min-height          : 350px;
+    background-position : center top;
+  }
+
+  .left {
+    align-items : center;
+  }
+
+  .social-logos {
+    justify-content : center;
+  }
+
+  .header,
+  .skills,
+  .job-position {
+    width      : 100%;
+    text-align : center;
+  }
+
+  .evg-name {
+    text-align : center;
+    font-size  : 38px;
+  }
+  .content {
+    align-items : center;
+  }
+
+  .skills {
+    width : 100%;
+  }
+
+  .evg-footer {
+    text-align : center;
+  }
+}
